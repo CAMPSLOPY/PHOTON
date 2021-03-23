@@ -4,13 +4,6 @@ const searchInp = document.querySelector(".search");
 const submitBtn = document.querySelector(".submit-btn");
 let searchValue;
 
-// EVENT LISTENERS
-searchInp.addEventListener("input", updateInput());
-
-function updateInput(e){
-
-}
-
 async function curatedPhotos() {
   const dataFetch = await fetch("https://api.pexels.com/v1/curated", {
     method: "GET",
@@ -52,3 +45,5 @@ async function searchPhotos(query) {
 }
 
 searchPhotos();
+
+// "https://api.pexels.com/v1/search?query=nature&per_page=1"

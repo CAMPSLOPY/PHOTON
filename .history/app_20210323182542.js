@@ -4,13 +4,6 @@ const searchInp = document.querySelector(".search");
 const submitBtn = document.querySelector(".submit-btn");
 let searchValue;
 
-// EVENT LISTENERS
-searchInp.addEventListener("input", updateInput());
-
-function updateInput(e){
-
-}
-
 async function curatedPhotos() {
   const dataFetch = await fetch("https://api.pexels.com/v1/curated", {
     method: "GET",
@@ -34,7 +27,7 @@ curatedPhotos();
 // now lets create the Search functionality
 
 async function searchPhotos(query) {
-  const photoSearch = await fetch(`https://api.pexels.com/v1/search=${query}`, {
+  const photoSearch = await fetch(`https://api.pexels.com/v1/search${query}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -52,3 +45,5 @@ async function searchPhotos(query) {
 }
 
 searchPhotos();
+
+

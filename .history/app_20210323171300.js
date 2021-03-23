@@ -4,13 +4,6 @@ const searchInp = document.querySelector(".search");
 const submitBtn = document.querySelector(".submit-btn");
 let searchValue;
 
-// EVENT LISTENERS
-searchInp.addEventListener("input", updateInput());
-
-function updateInput(e){
-
-}
-
 async function curatedPhotos() {
   const dataFetch = await fetch("https://api.pexels.com/v1/curated", {
     method: "GET",
@@ -24,31 +17,11 @@ async function curatedPhotos() {
     const galleryImg = document.createElement("div");
     galleryImg.classList.add("gallery-img");
     galleryImg.innerHTML = `<img src = ${photo.src.large}> </img>
-    <p>${photo.photographer}</p>`;
+    <p>${photo.photographer}</p>`
     gallery.appendChild(galleryImg);
   });
 }
 
 curatedPhotos();
 
-// now lets create the Search functionality
-
-async function searchPhotos(query) {
-  const photoSearch = await fetch(`https://api.pexels.com/v1/search=${query}`, {
-    method: "GET",
-    headers: {
-      Accept: "application/json",
-      Authorization: auth,
-    },
-  });
-  const data = await photoSearch.json();
-  data.photos.forEach((photo) => {
-    const galleryImg = document.createElement("div");
-    galleryImg.classList.add("gallery-img");
-    galleryImg.innerHTML = `<img src = ${photo.src.large}> </img>
-    <p>${photo.photographer}</p>`;
-    gallery.appendChild(galleryImg);
-  });
-}
-
-searchPhotos();
+// now lets create the 

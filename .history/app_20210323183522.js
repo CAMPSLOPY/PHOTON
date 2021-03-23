@@ -7,8 +7,8 @@ let searchValue;
 // EVENT LISTENERS
 searchInp.addEventListener("input", updateInput());
 
-function updateInput(e){
-
+function updateInput(){
+  
 }
 
 async function curatedPhotos() {

@@ -7,9 +7,7 @@ let searchValue;
 // EVENT LISTENERS
 searchInp.addEventListener("input", updateInput());
 
-function updateInput(e){
-
-}
+function 
 
 async function curatedPhotos() {
   const dataFetch = await fetch("https://api.pexels.com/v1/curated", {
