@@ -5,14 +5,12 @@ const form = document.querySelector(".search-form");
 let searchValue;
 
 // EVENT LISTENERS
-searchInp.addEventListener("input", updateInput);
+searchInp.addEventListener("input", updateInput());
 
 function updateInput(e) {
   searchValue = e.target.value;
+  console.log(searchValue)
 }
-form.addEventListener("submit", () => {
-  searchPhotos(searchValue);
-});
 
 async function curatedPhotos() {
   const dataFetch = await fetch("https://api.pexels.com/v1/curated", {
@@ -48,6 +46,7 @@ async function searchPhotos(query) {
     }
   );
   const data = await photoSearch.json();
+  console.log(data);
   data.photos.forEach((photo) => {
     const galleryImg = document.createElement("div");
     galleryImg.classList.add("gallery-img");

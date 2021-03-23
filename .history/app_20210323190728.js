@@ -10,9 +10,6 @@ searchInp.addEventListener("input", updateInput);
 function updateInput(e) {
   searchValue = e.target.value;
 }
-form.addEventListener("submit", () => {
-  searchPhotos(searchValue);
-});
 
 async function curatedPhotos() {
   const dataFetch = await fetch("https://api.pexels.com/v1/curated", {
@@ -48,6 +45,7 @@ async function searchPhotos(query) {
     }
   );
   const data = await photoSearch.json();
+
   data.photos.forEach((photo) => {
     const galleryImg = document.createElement("div");
     galleryImg.classList.add("gallery-img");
