@@ -6,13 +6,7 @@ const searchInp = document.querySelector(".search");
 const submitBtn = document.querySelector(".submit-btn");
 let searchValue;
 
-async function curatedPhotos() {
-  const dataFetch = await fetch("https://api.pexels.com/v1/curated", {
-    method : 'GET',
-    headers: {
-        Accept: 'application/json', 
-        Authorization : auth,
-    }
-  });
- 
+
+  async function curatedPhotos(){
+    const dataFetch = await fetch ('https://api.pexels.com/v1/curated')
 }
