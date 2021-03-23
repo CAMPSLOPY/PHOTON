@@ -14,5 +14,4 @@ async function curatedPhotos() {
       Authorization: auth,
     },
   });
-  const data = await dataFetch.json();
 }
