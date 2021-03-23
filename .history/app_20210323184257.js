@@ -1,7 +1,7 @@
 const auth = "563492ad6f91700001000001094114794e9d44f98bfb6159327fc6fe";
 const gallery = document.querySelector(".gallery");
 const searchInp = document.querySelector(".search");
-const form = document.querySelector(".serach-form");
+const submitBtn = document.querySelector(".submit-btn");
 let searchValue;
 
 // EVENT LISTENERS
@@ -33,7 +33,7 @@ curatedPhotos();
 
 async function searchPhotos(query) {
   const photoSearch = await fetch(
-    `https://api.pexels.com/v1/search?query=${query}nature&per_page=1`,
+    `https://api.pexels.com/v1/search?query=nature&per_page=1`,
     {
       method: "GET",
       headers: {
