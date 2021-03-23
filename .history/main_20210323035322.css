@@ -19,7 +19,6 @@ header {
   align-items: center;
   justify-content: center;
   min-height: 30vh;
-  background: #ddd;
 }
 header h2 {
   padding: 2rem;
@@ -51,5 +50,4 @@ header h2 {
     padding: 0.5rem;
     border: none;
     outline: none;
-    font-weight: bolder;
 }

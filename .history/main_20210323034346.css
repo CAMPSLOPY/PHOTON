@@ -19,37 +19,11 @@ header {
   align-items: center;
   justify-content: center;
   min-height: 30vh;
-  background: #ddd;
 }
 header h2 {
   padding: 2rem;
 }
 #logo {
   text-decoration: none;
-  color: red;
-  font-size: 2rem;
-}
-.search-form {
-  padding: 2rem;
-  display: flex;
-}
-.search-form input {
-  padding: 0.5rem;
-  width: 100%;
-  border: 2px solid rgb(74, 68, 131);
- outline: none;
-}
-
-.search-form input[type="text"] {
-  font-size: 1.3rem;
-}
-
-.search-form button{
-    background: rgb(74, 68, 131);
-    color: white;
-    cursor: pointer;
-    padding: 0.5rem;
-    border: none;
-    outline: none;
-    font-weight: bolder;
+  color: r;
 }

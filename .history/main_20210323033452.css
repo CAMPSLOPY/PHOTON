@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  background: #020205;
+  color: #fff;
+  cursor: pointer;
+  font-size: 62.5%;
+}
+h1 {
+  text-align: center;
+  margin: 20px 0px;
+  font-size: 2rem;
+}
