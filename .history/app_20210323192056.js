@@ -7,6 +7,7 @@ let searchValue;
 // EVENT LISTENERS
 searchInp.addEventListener("input", updateInput);
 
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   searchPhotos(searchValue);
@@ -40,7 +41,7 @@ curatedPhotos();
 
 async function searchPhotos(query) {
   const photoSearch = await fetch(
-    `https://api.pexels.com/v1/search?query=${query}`,
+    `https://api.pexels.com/v1/search?query=${query}nature&per_page=1`,
     {
       method: "GET",
       headers: {
