@@ -7,12 +7,10 @@ html {
   background: #020205;
   color: #fff;
   cursor: pointer;
-  font-size: 62.5%;
 }
 h1 {
   text-align: center;
   margin: 20px 0px;
-  font-size: 2rem;
 }
 .form-control {
   display: flex;
@@ -31,22 +29,15 @@ input {
 }
 
 input[type="text"] {
-  width: 29.75rem;
+  width: 18.75rem;
 }
 
 button {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.2rem;
   padding: 5px 20px;
   cursor: pointer;
 }
 
 
-@media screen and (max-width: 500px){
-    .form-control{
-        width: 100%;
-    }
-    input[type="text"] {
-        width: 100%;
-      }
-}
+@media screen and (max-width)

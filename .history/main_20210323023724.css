@@ -12,7 +12,6 @@ html {
 h1 {
   text-align: center;
   margin: 20px 0px;
-  font-size: 2rem;
 }
 .form-control {
   display: flex;
@@ -36,7 +35,7 @@ input[type="text"] {
 
 button {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.2rem;
   padding: 5px 20px;
   cursor: pointer;
 }
