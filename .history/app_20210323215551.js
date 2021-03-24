@@ -16,6 +16,29 @@ function updateInput(e) {
   searchValue = e.target.value;
 }
 
+// lets refactor the code
+async function fetchApi(url) {
+  const dataFetch = await fetch(url, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: auth,
+    },
+  });
+  const data = await dataFetch.json();
+  return data;
+}
+
+function generatePictures(data) {
+  data.photos.forEach((photo) => {
+    const galleryImg = document.createElement("div");
+    galleryImg.classList.add("gallery-img");
+    galleryImg.innerHTML = `<img src = ${photo.src.large}> </img>
+    <p>${photo.photographer}</p>`;
+    gallery.appendChild(galleryImg);
+  });
+}
+
 async function curatedPhotos() {
   const dataFetch = await fetch("https://api.pexels.com/v1/curated", {
     method: "GET",
@@ -33,54 +56,30 @@ async function curatedPhotos() {
     gallery.appendChild(galleryImg);
   });
 }
+
+// OR
+
+// async function curatedPhotos() {
+//   const data = await fetch("https://api.pexels.com/v1/curated");
+//   generatePictures(data);
+// }
+
 curatedPhotos();
 
 // now lets create the Search functionality
 
-async function searchPhotos(query) {
-  clear();
-  const photoSearch = await fetch(
-    `https://api.pexels.com/v1/search?query=${query}`,
-    {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        Authorization: auth,
-      },
-    }
-  );
-  const data = await photoSearch.json();
-  data.photos.forEach((photo) => {
-    const galleryImg = document.createElement("div");
-    galleryImg.classList.add("gallery-img");
-    galleryImg.innerHTML = `<img src = ${photo.src.large}> </img>
-    <p>${photo.photographer}</p>`;
-    gallery.appendChild(galleryImg);
-  });
-}
-searchPhotos();
-
-// clear Gallery
-
-function clear() {
-  gallery.innerHTML = "";
-  searchInp.value = "";
-}
-
-// lets refactor the code
-// async function fetchApi(url) {
-//   const dataFetch = await fetch(url, {
-//     method: "GET",
-//     headers: {
-//       Accept: "application/json",
-//       Authorization: auth,
-//     },
-//   });
-//   const data = await dataFetch.json();
-//   return data;
-// }
-
-// function generatePictures(data) {
+// async function searchPhotos(query) {
+//   const photoSearch = await fetch(
+//     `https://api.pexels.com/v1/search?query=${query}`,
+//     {
+//       method: "GET",
+//       headers: {
+//         Accept: "application/json",
+//         Authorization: auth,
+//       },
+//     }
+//   );
+//   const data = await photoSearch.json();
 //   data.photos.forEach((photo) => {
 //     const galleryImg = document.createElement("div");
 //     galleryImg.classList.add("gallery-img");
@@ -89,17 +88,13 @@ function clear() {
 //     gallery.appendChild(galleryImg);
 //   });
 // }
-
 // OR
 
-// async function searchPhotos(query) {
-//   const data = await fetchApi(`https://api.pexels.com/v1/search?query=${query}`);
-//   generatePictures(data);
-// }
+async function searchPhotos(query) {
+  const data = await fetch(`https://api.pexels.com/v1/search?query=${query}`);
+  generatePictures(data);
+}
 
-// OR
+searchPhotos();
 
-// async function curatedPhotos() {
-//   const data = await fetchApi("https://api.pexels.com/v1/curated");
-//   generatePictures(data);
-// }
+

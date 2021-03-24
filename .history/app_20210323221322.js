@@ -64,7 +64,6 @@ searchPhotos();
 
 function clear() {
   gallery.innerHTML = "";
-  searchInp.value = "";
 }
 
 // lets refactor the code

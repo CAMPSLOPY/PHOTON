@@ -38,7 +38,6 @@ curatedPhotos();
 // now lets create the Search functionality
 
 async function searchPhotos(query) {
-  clear();
   const photoSearch = await fetch(
     `https://api.pexels.com/v1/search?query=${query}`,
     {
@@ -59,13 +58,6 @@ async function searchPhotos(query) {
   });
 }
 searchPhotos();
-
-// clear Gallery
-
-function clear() {
-  gallery.innerHTML = "";
-  searchInp.value = "";
-}
 
 // lets refactor the code
 // async function fetchApi(url) {
@@ -93,13 +85,13 @@ function clear() {
 // OR
 
 // async function searchPhotos(query) {
-//   const data = await fetchApi(`https://api.pexels.com/v1/search?query=${query}`);
+//   const data = await fetch(`https://api.pexels.com/v1/search?query=${query}`);
 //   generatePictures(data);
 // }
 
 // OR
 
 // async function curatedPhotos() {
-//   const data = await fetchApi("https://api.pexels.com/v1/curated");
+//   const data = await fetch("https://api.pexels.com/v1/curated");
 //   generatePictures(data);
 // }

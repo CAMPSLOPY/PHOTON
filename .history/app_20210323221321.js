@@ -38,7 +38,7 @@ curatedPhotos();
 // now lets create the Search functionality
 
 async function searchPhotos(query) {
-  clear();
+  clear()
   const photoSearch = await fetch(
     `https://api.pexels.com/v1/search?query=${query}`,
     {
@@ -64,7 +64,6 @@ searchPhotos();
 
 function clear() {
   gallery.innerHTML = "";
-  searchInp.value = "";
 }
 
 // lets refactor the code
