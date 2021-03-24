@@ -57,7 +57,6 @@ async function searchPhotos(query) {
     <div class="gallery-info">
     <p>${photo.photographer}</p>
     <a href= ${photo.src.original}>Download</a>
-    </div>
     <img src = ${photo.src.large}> </img>`;
     gallery.appendChild(galleryImg);
   });

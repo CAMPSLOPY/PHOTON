@@ -53,12 +53,9 @@ async function searchPhotos(query) {
   data.photos.forEach((photo) => {
     const galleryImg = document.createElement("div");
     galleryImg.classList.add("gallery-img");
-    galleryImg.innerHTML = `
-    <div class="gallery-info">
+    galleryImg.innerHTML = `<img src = ${photo.src.large}> </img>
     <p>${photo.photographer}</p>
-    <a href= ${photo.src.original}>Download</a>
-    </div>
-    <img src = ${photo.src.large}> </img>`;
+    <a href= >Download</a>`;
     gallery.appendChild(galleryImg);
   });
 }
