@@ -13,7 +13,7 @@ searchInp.addEventListener("input", updateInput);
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  currentSearch = searchValue;
+  currentSearch = searchValue
   searchPhotos(searchValue);
 });
 
@@ -22,7 +22,7 @@ function updateInput(e) {
 }
 
 async function curatedPhotos() {
-  fetchLink = "https://api.pexels.com/v1/curated?";
+  fetchLink = "https://api.pexels.com/v1/curated";
   const dataFetch = await fetch(fetchLink, {
     method: "GET",
     headers: {
@@ -49,7 +49,7 @@ curatedPhotos();
 
 async function searchPhotos(query) {
   clear();
-  fetchLink = `https://api.pexels.com/v1/search?query=${query}`;
+  fetchLink = `https://api.pexels.com/v1/search?query=${query}&per_page=1`;
   const photoSearch = await fetch(fetchLink, {
     method: "GET",
     headers: {
@@ -81,26 +81,14 @@ function clear() {
 
 more.addEventListener("click", loadMore);
 
-// async function loadMore() {
-//   page++;
-//   if (currentSearch) {
-//     fetchlink = `https://api.pexels.com/v1/search?query=${query}&per_page=${page}`;
-//   } else {
-//     fetchLink = `https://api.pexels.com/v1/curated?=${page}`;
-//   }
-//   const data = await fetch(fetchLink);
-//   data.photos.forEach((photo) => {
-//     const galleryImg = document.createElement("div");
-//     galleryImg.classList.add("gallery-img");
-//     galleryImg.innerHTML = `
-//     <div class="gallery-info">
-//     <p>${photo.photographer}</p>
-//     <a href=${photo.src.original}>Download</a>
-//     </div>
-//     <img src=${photo.src.large}></img>`;
-//     gallery.appendChild(galleryImg);
-//   });
-// }
+async function loadMore() {
+  page++;
+  if(){
+    fetchlink =`https://api.pexels.com/v1/search?query=${query}&per_page=${page}`;
+  }else{
+    fetchLink = `https://api.pexels.com/v1/curated`;
+  }
+}
 
 // lets refactor the code
 // async function fetchApi(url) {

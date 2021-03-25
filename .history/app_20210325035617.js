@@ -81,26 +81,16 @@ function clear() {
 
 more.addEventListener("click", loadMore);
 
-// async function loadMore() {
-//   page++;
-//   if (currentSearch) {
-//     fetchlink = `https://api.pexels.com/v1/search?query=${query}&per_page=${page}`;
-//   } else {
-//     fetchLink = `https://api.pexels.com/v1/curated?=${page}`;
-//   }
-//   const data = await fetch(fetchLink);
-//   data.photos.forEach((photo) => {
-//     const galleryImg = document.createElement("div");
-//     galleryImg.classList.add("gallery-img");
-//     galleryImg.innerHTML = `
-//     <div class="gallery-info">
-//     <p>${photo.photographer}</p>
-//     <a href=${photo.src.original}>Download</a>
-//     </div>
-//     <img src=${photo.src.large}></img>`;
-//     gallery.appendChild(galleryImg);
-//   });
-// }
+async function loadMore(url) {
+  page++;
+  if (currentSearch) {
+    fetchlink = `https://api.pexels.com/v1/search?query=${query}&per_page=${page}`;
+  } else {
+    fetchLink = `https://api.pexels.com/v1/curated?=${page}`;
+  }
+  const data = await fetch(fetchLink);
+  
+}
 
 // lets refactor the code
 // async function fetchApi(url) {
