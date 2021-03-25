@@ -2,7 +2,7 @@ const auth = "563492ad6f91700001000001094114794e9d44f98bfb6159327fc6fe";
 const gallery = document.querySelector(".gallery");
 const searchInp = document.querySelector(".search");
 const form = document.querySelector(".search-form");
-const more = document.querySelector(".more");
+const more = 
 let searchValue;
 
 // EVENT LISTENERS
@@ -29,7 +29,7 @@ async function curatedPhotos() {
   data.photos.forEach((photo) => {
     const galleryImg = document.createElement("div");
     galleryImg.classList.add("gallery-img");
-    galleryImg.innerHTML = `
+    galleryImg.innerHTML =`
     <div class="gallery-info">
     <p>${photo.photographer}</p>
     <a href=${photo.src.original}>Download</a>
@@ -74,12 +74,6 @@ searchPhotos();
 function clear() {
   gallery.innerHTML = "";
   searchInp.value = "";
-}
-
-more.addEventListener("click", loadMore);
-
-async function loadMore(){
-
 }
 
 // lets refactor the code

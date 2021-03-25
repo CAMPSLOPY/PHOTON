@@ -76,11 +76,7 @@ function clear() {
   searchInp.value = "";
 }
 
-more.addEventListener("click", loadMore);
-
-async function loadMore(){
-
-}
+more.addEventListener()
 
 // lets refactor the code
 // async function fetchApi(url) {

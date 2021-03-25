@@ -78,9 +78,7 @@ function clear() {
 
 more.addEventListener("click", loadMore);
 
-async function loadMore(){
-
-}
+async function 
 
 // lets refactor the code
 // async function fetchApi(url) {

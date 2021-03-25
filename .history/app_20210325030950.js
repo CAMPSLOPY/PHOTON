@@ -79,7 +79,7 @@ function clear() {
 more.addEventListener("click", loadMore);
 
 async function loadMore(){
-
+  
 }
 
 // lets refactor the code

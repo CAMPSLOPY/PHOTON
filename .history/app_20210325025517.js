@@ -2,7 +2,7 @@ const auth = "563492ad6f91700001000001094114794e9d44f98bfb6159327fc6fe";
 const gallery = document.querySelector(".gallery");
 const searchInp = document.querySelector(".search");
 const form = document.querySelector(".search-form");
-const more = document.querySelector(".more");
+const more = document.query
 let searchValue;
 
 // EVENT LISTENERS
@@ -74,12 +74,6 @@ searchPhotos();
 function clear() {
   gallery.innerHTML = "";
   searchInp.value = "";
-}
-
-more.addEventListener("click", loadMore);
-
-async function loadMore(){
-
 }
 
 // lets refactor the code

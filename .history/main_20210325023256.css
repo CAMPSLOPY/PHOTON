@@ -94,10 +94,5 @@ header h2 {
 }
 .more{
   font-size: 1rem;
-  padding: 0.5rem 2rem;
-  cursor: pointer;
-  color: white;
-  background: rgb(74, 68, 131);
-  border: none;
-  outline: none;
+  padding: 1rem 2rem;
 }

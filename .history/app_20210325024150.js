@@ -13,6 +13,10 @@ form.addEventListener("submit", (e) => {
   searchPhotos(searchValue);
 });
 
+more.addEventListener("click", (e) => {
+  searchPhotos(searchValue);
+});
+
 function updateInput(e) {
   searchValue = e.target.value;
 }
@@ -74,12 +78,6 @@ searchPhotos();
 function clear() {
   gallery.innerHTML = "";
   searchInp.value = "";
-}
-
-more.addEventListener("click", loadMore);
-
-async function loadMore(){
-
 }
 
 // lets refactor the code

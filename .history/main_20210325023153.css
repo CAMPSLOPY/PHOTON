@@ -88,16 +88,5 @@ header h2 {
 
 .nav-button{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 30vh;
-}
-.more{
-  font-size: 1rem;
-  padding: 0.5rem 2rem;
-  cursor: pointer;
-  color: white;
-  background: rgb(74, 68, 131);
-  border: none;
-  outline: none;
+  
 }
