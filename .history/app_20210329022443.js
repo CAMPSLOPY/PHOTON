@@ -50,12 +50,6 @@ function updateInput(e) {
 //     gallery.appendChild(galleryImg);
 //   });
 // }
-
-async function curatedPhotos() {
-  const data = await fetchApi("https://api.pexels.com/v1/curated");
-  generatePictures(data);
-}
-
 curatedPhotos();
 
 // now lets create the Search functionality

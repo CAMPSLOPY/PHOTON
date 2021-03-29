@@ -50,12 +50,6 @@ function updateInput(e) {
 //     gallery.appendChild(galleryImg);
 //   });
 // }
-
-async function curatedPhotos() {
-  const data = await fetchApi("https://api.pexels.com/v1/curated");
-  generatePictures(data);
-}
-
 curatedPhotos();
 
 // now lets create the Search functionality
@@ -85,12 +79,6 @@ curatedPhotos();
 //     gallery.appendChild(galleryImg);
 //   });
 // }
-
-async function searchPhotos(query) {
-  const data = await fetchApi(`https://api.pexels.com/v1/search?query=${query}`);
-  generatePictures(data);
-}
-
 searchPhotos();
 
 // clear Gallery
@@ -123,3 +111,16 @@ function generatePictures(data) {
   });
 }
 
+// OR
+
+async function searchPhotos(query) {
+  const data = await fetchApi(`https://api.pexels.com/v1/search?query=${query}`);
+  generatePictures(data);
+}
+
+// OR
+
+async function curatedPhotos() {
+  const data = await fetchApi("https://api.pexels.com/v1/curated");
+  generatePictures(data);
+}

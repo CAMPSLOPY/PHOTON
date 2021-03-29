@@ -53,7 +53,11 @@ function updateInput(e) {
 
 async function curatedPhotos() {
   const data = await fetchApi("https://api.pexels.com/v1/curated");
-  generatePictures(data);
+  async function curatedPhotos() {
+    const data = await fetchApi("https://api.pexels.com/v1/curated");
+    generatePictures(data);
+  }
+  
 }
 
 curatedPhotos();
