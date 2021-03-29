@@ -15,8 +15,9 @@ form.addEventListener("submit", (e) => {
   searchPhotos(searchValue);
 });
 
-async function loadMore() {
+async function loadMore(){
   page++;
+
 }
 
 function updateInput(e) {
@@ -24,16 +25,13 @@ function updateInput(e) {
 }
 
 async function curatedPhotos() {
-  const dataFetch = await fetch(
-    "https://api.pexels.com/v1/curated?per_page=15&page=1",
-    {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        Authorization: auth,
-      },
-    }
-  );
+  const dataFetch = await fetch("https://api.pexels.com/v1/curated?per", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: auth,
+    },
+  });
   const data = await dataFetch.json();
   data.photos.forEach((photo) => {
     const galleryImg = document.createElement("div");

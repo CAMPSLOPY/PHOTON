@@ -3,37 +3,29 @@ const gallery = document.querySelector(".gallery");
 const searchInp = document.querySelector(".search");
 const form = document.querySelector(".search-form");
 let searchValue;
-let page;
 const more = document.querySelector(".more");
 
 // EVENT LISTENERS
 searchInp.addEventListener("input", updateInput);
-more.addEventListener("click", loadMore);
+more.addEventListener('click')
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   searchPhotos(searchValue);
 });
 
-async function loadMore() {
-  page++;
-}
-
 function updateInput(e) {
   searchValue = e.target.value;
 }
 
 async function curatedPhotos() {
-  const dataFetch = await fetch(
-    "https://api.pexels.com/v1/curated?per_page=15&page=1",
-    {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        Authorization: auth,
-      },
-    }
-  );
+  const dataFetch = await fetch("https://api.pexels.com/v1/curated", {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      Authorization: auth,
+    },
+  });
   const data = await dataFetch.json();
   data.photos.forEach((photo) => {
     const galleryImg = document.createElement("div");
