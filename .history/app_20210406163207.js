@@ -20,13 +20,9 @@ form.addEventListener("submit", (e) => {
 
 async function loadMore() {
   page++;
-  if (currentSearch) {
-    fetchlink = `https://api.pexels.com/v1/search?query=${currentSearch}`;
-  } else {
-    fetchlink = `https://api.pexels.com/v1/curated?per_page=15`;
-  }
-  const data = await fetchApi(fetchlink);
-  generatePictures(data);
+  if(){
+
+  }else
 }
 
 function updateInput(e) {
@@ -59,7 +55,6 @@ function updateInput(e) {
 // }
 
 // lets refactor the code
-
 async function fetchApi(url) {
   const dataFetch = await fetch(url, {
     method: "GET",
@@ -88,10 +83,12 @@ function generatePictures(data) {
 
 async function curatedPhotos() {
   const data = await fetchApi(
-    "https://api.pexels.com/v1/curated?per_page=15`"
+    "https://api.pexels.com/v1/curated"
   );
   generatePictures(data);
 }
+
+
 
 // now lets create the Search functionality
 
@@ -122,7 +119,6 @@ async function curatedPhotos() {
 // }
 
 async function searchPhotos(query) {
-  clear();
   const data = await fetchApi(
     `https://api.pexels.com/v1/search?query=${query}`
   );
@@ -137,5 +133,6 @@ function clear() {
   gallery.innerHTML = "";
   searchInp.value = "";
 }
+
 
 curatedPhotos();

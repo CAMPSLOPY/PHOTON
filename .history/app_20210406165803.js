@@ -88,7 +88,7 @@ function generatePictures(data) {
 
 async function curatedPhotos() {
   const data = await fetchApi(
-    "https://api.pexels.com/v1/curated?per_page=15`"
+    "https://api.pexels.com/v1/curated?p1"
   );
   generatePictures(data);
 }

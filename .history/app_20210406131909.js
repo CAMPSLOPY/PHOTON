@@ -20,13 +20,6 @@ form.addEventListener("submit", (e) => {
 
 async function loadMore() {
   page++;
-  if (currentSearch) {
-    fetchlink = `https://api.pexels.com/v1/search?query=${currentSearch}`;
-  } else {
-    fetchlink = `https://api.pexels.com/v1/curated?per_page=15`;
-  }
-  const data = await fetchApi(fetchlink);
-  generatePictures(data);
 }
 
 function updateInput(e) {
@@ -59,7 +52,6 @@ function updateInput(e) {
 // }
 
 // lets refactor the code
-
 async function fetchApi(url) {
   const dataFetch = await fetch(url, {
     method: "GET",
@@ -78,20 +70,22 @@ function generatePictures(data) {
     galleryImg.classList.add("gallery-img");
     galleryImg.innerHTML = `
     <div class="gallery-info">
-    <p>${photo.photographer}</p>
-    <a href=${photo.src.original}>Download</a>
+    
     </div>
-    <img src = ${photo.src.large}> </img>`;
+   
+    
+    <img src = ${photo.src.large}> </img>
+    `;
     gallery.appendChild(galleryImg);
   });
 }
 
 async function curatedPhotos() {
-  const data = await fetchApi(
-    "https://api.pexels.com/v1/curated?per_page=15`"
-  );
+  const data = await fetchApi("https://api.pexels.com/v1/curated");
   generatePictures(data);
 }
+
+curatedPhotos();
 
 // now lets create the Search functionality
 
@@ -122,10 +116,7 @@ async function curatedPhotos() {
 // }
 
 async function searchPhotos(query) {
-  clear();
-  const data = await fetchApi(
-    `https://api.pexels.com/v1/search?query=${query}`
-  );
+  const data = await fetchApi(`https://api.pexels.com/v1/search?query=${query}`);
   generatePictures(data);
 }
 
@@ -138,4 +129,4 @@ function clear() {
   searchInp.value = "";
 }
 
-curatedPhotos();
+
